@@ -1,3 +1,4 @@
+
 [workspace]
 members = [
     "serde",
@@ -6,3 +7,4 @@ members = [
     "serde_test",
     "test_suite",
 ]
+

@@ -1329,7 +1329,8 @@ where
 mod private {
     use lib::*;
 
-    use de::{self, DeserializeSeed, Deserializer, MapAccess, Unexpected, VariantAccess, Visitor};
+    use de::{self, DeserializeSeed, Deserializer, MapAccess, Unexpected, VariantAccess, Visitor,
+    Error};
 
     #[derive(Clone, Debug)]
     pub struct UnitOnly<E> {
@@ -1454,7 +1455,9 @@ mod private {
         where
             D: Deserializer<'de>,
         {
-            deserializer.deserialize_tuple(self.len, self.visitor)
+//            deserializer.deserialize_tuple(self.len, self.visitor)
+Err(Error::custom("blah"))
+
         }
     }
 
@@ -1472,7 +1475,10 @@ mod private {
         where
             D: Deserializer<'de>,
         {
-            deserializer.deserialize_map(self.visitor)
+//            deserializer.deserialize_map(self.visitor)
+// Err(Box::new(ErrorKind::Custom("blah".to_string())))
+Err(Error::custom("blah"))
+
         }
     }
 

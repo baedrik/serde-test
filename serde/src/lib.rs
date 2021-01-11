@@ -285,7 +285,7 @@ mod std_error;
 #[cfg(feature = "serde_derive")]
 #[allow(unused_imports)]
 #[macro_use]
-extern crate serde_derive;
+pub extern crate serde_derive;
 #[cfg(feature = "serde_derive")]
 #[doc(hidden)]
 pub use serde_derive::*;
